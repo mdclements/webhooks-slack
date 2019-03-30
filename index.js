@@ -191,12 +191,12 @@ function notifySlack(imageUrl, payload, location, action) {
     username: 'Plex',
     icon_emoji: ':plex:',
     attachments: [{
-      fallback: 'Required plain-text summary of the attachment.',
+      fallback: '${action} by ${payload.Account.title} on ${payload.Player.title} from ${payload.Server.title}',
       color: '#a67a2d',
       title: formatTitle(payload.Metadata),
       text: formatSubtitle(payload.Metadata),
       thumb_url: imageUrl,
-      footer: `${action} by ${payload.Account.title} on ${payload.Player.title} from ${payload.Server.title} ${locationText}`,
+      footer: `${action} by ${payload.Account.title} on ${payload.Player.title} from ${payload.Server.title}`,
       footer_icon: payload.Account.thumb
     }]
   }, () => {});
