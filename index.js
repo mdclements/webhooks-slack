@@ -191,7 +191,7 @@ function notifySlack(imageUrl, payload, location, action) {
     username: 'Plex',
     icon_emoji: ':plex:',
     attachments: [{
-      fallback: '${action} by ${payload.Account.title} on ${payload.Player.title} from ${payload.Server.title}',
+      fallback: 'Played a title on Plex',
       color: '#a67a2d',
       title: formatTitle(payload.Metadata),
       text: formatSubtitle(payload.Metadata),
